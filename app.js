@@ -14,6 +14,9 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
+/**
+ * @param {}
+ */
 
 // database connection
 
@@ -35,7 +38,5 @@ app.set("views", path.join(__dirname, "views"));
 
 
 
-// Express Server
-app.listen(PORT, () => {
-    console.log(chalk.yellow(`\t\tServer is listening at %PORT ${PORT} on %${app.settings.env} mode\n`));
-});
+// express server 
+require("./config/server.config")(app);
